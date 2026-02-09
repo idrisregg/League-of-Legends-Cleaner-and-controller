@@ -3,7 +3,7 @@ a Windows Only Console software that lets you clean League of Legends Game direc
 PS : the Default LoL Client exe location was chosen, it will not run if LoL is not installed in default manner.
 
 
-##Running it: 
+#Running it: 
 
 -Clone Repo 
 
