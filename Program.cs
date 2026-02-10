@@ -35,6 +35,6 @@ public class Program : Init
                     break;
             }
         }
-        Console.WriteLine("Closing Program...");
+        Console.WriteLine("Closing...");
     }
 }
