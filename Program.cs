@@ -29,12 +29,12 @@ public class Program : Init
                 case 2:
                     Open();
                     Console.Write("Openning Game....");
-                    break;
+                    return;
                 default:
                     prog = false;
                     break;
             }
         }
-        Console.WriteLine("\nClosing...");
+        Console.WriteLine("Closing Program...");
     }
 }
