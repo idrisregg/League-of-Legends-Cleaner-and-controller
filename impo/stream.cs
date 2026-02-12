@@ -18,7 +18,7 @@ public class Stream : Paths, IStream
 
     readonly string riotClientPath1 = Path.Combine(riotPath, RiotLog);
 
-    public void GetLol()
+    public async Task GetLol()
     {
         if (Directory.Exists(lolPath) || Directory.Exists(lolPath1))
         {
@@ -30,24 +30,39 @@ public class Stream : Paths, IStream
                 ..Directory.GetDirectories(lolPath),
                 ..Directory.GetDirectories(lolPath1)];
 
+            //creating task list for all files and folders
+            var alTask = new List<Task>();
+
             foreach (var fi in allFiles)
             {
-                try {  File.Delete(fi); }
-                catch (IOException)
-                {
-                    //skips files that are running 
-                }
+                //adding running task to list
+                alTask.Add(
+                    Task.Run(() =>
+                    {
+                        try { File.Delete(fi); }
+                        catch (IOException)
+                        {
+                            //skips files that are running 
+                        }
+                    })
+                );
             }
 
             foreach (var fo in allFolders)
             {
-                try {  Directory.Delete(fo, true); }
-                catch (IOException)
-                {
-                    //skips folder that are running 
-                }
+                alTask.Add(
+                    Task.Run(() =>
+                    {
+                        try { Directory.Delete(fo, true); }
+                        catch (IOException)
+                        {
+                            //skips folder that are running 
+                        }
+                    })
+                );
             }
-
+            //invoking await for the whole list
+            await Task.WhenAll(alTask);
         }
         else
         {
@@ -55,7 +70,7 @@ public class Stream : Paths, IStream
         }
     }
 
-    public void GetRiot()
+    public async Task GetRiot()
     {
         if (Directory.Exists(riotClientPath) || Directory.Exists(riotClientPath1))
         {
@@ -63,25 +78,31 @@ public class Stream : Paths, IStream
 
             string[] allFolders = [.. Directory.GetDirectories(riotClientPath), .. Directory.GetDirectories(riotClientPath1)];
 
+            var alTask = new List<Task>();
+
             foreach (var fi in allfiles)
             {
-                try 
-                {  
-                    File.Delete(fi)); 
-                }
-                catch (IOException)
-                { }
+                alTask.Add(
+                    Task.Run(() =>
+                    {
+                        try { File.Delete(fi); }
+                        catch (IOException)
+                        { }
+                    })
+                );
             }
             foreach (var fo in allFolders)
             {
-                try
-                {
-                     Directory.Delete(fo, true));
-                }
-                catch (IOException)
-                { }
+                alTask.Add(
+                    Task.Run(() =>
+                    {
+                        try { Directory.Delete(fo, true); }
+                        catch (IOException)
+                        { }
+                    })
+                );
             }
-
+            await Task.WhenAll(alTask);
         }
         else
         {

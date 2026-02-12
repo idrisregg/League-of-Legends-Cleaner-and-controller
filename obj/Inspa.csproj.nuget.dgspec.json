@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\Inspa\\Inspa.csproj": {}
+    "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\League-of-Legends-Cleaner-and-controller\\Inspa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\Inspa\\Inspa.csproj": {
+    "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\League-of-Legends-Cleaner-and-controller\\Inspa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\Inspa\\Inspa.csproj",
+        "projectUniqueName": "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\League-of-Legends-Cleaner-and-controller\\Inspa.csproj",
         "projectName": "Inspa",
-        "projectPath": "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\Inspa\\Inspa.csproj",
+        "projectPath": "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\League-of-Legends-Cleaner-and-controller\\Inspa.csproj",
         "packagesPath": "C:\\Users\\ayubr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\Inspa\\obj\\",
+        "outputPath": "C:\\Users\\ayubr\\OneDrive\\Desktop\\IDRIS\\League-of-Legends-Cleaner-and-controller\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ayubr\\AppData\\Roaming\\NuGet\\NuGet.Config"

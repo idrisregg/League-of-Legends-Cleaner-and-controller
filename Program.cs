@@ -9,7 +9,9 @@ public class Program : Init
     //gets likely name of user from pc
     private readonly static string propreiter = Environment.UserName;
 
-    public static void Main(string[] args)
+
+
+    public static async Task Main(string[] args)
     {
         Ques.GetQues($"--------------------------------Welcome {propreiter}, Choose an Option : -------------------------------");
 
@@ -22,8 +24,7 @@ public class Program : Init
             switch (begin)
             {
                 case 1:
-                     lol.GetLol();
-                     lol.GetRiot();
+                    await Task.WhenAll(lol.GetLol(), lol.GetRiot());
                     Console.Write("Cleaning Done.");
                     break;
                 case 2:

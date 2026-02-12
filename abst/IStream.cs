@@ -2,7 +2,7 @@ namespace Inspa.abst;
 
 interface IStream
 {
-    void GetRiot();
+    Task GetRiot();
 
-    void GetLol();
+    Task GetLol();
 }
